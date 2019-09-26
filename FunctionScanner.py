@@ -1,7 +1,7 @@
 class FunctionScanner:
     @staticmethod
     def scan(f, start_x, end_x):
-        step = (end_x - start_x) / 15
+        step = (end_x - start_x) / 40
         x = start_x
         intervals = []
 
