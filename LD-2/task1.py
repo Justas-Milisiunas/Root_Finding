@@ -85,10 +85,10 @@ Q, R = qr_decomposition(A.copy())
 y = np.dot(Q.T, B)
 temp = np.linalg.solve(R, y)
 x = solve(Q, R, B.copy())
-print(f"x = {x}")
+print(f"x = \n{x}")
 
 x_correct = check_x(A, B, x)
-print(f"Is x satisfy all equations in the system: {x_correct}\n")
+print(f"x satisfy all equations in the system: {x_correct}\n")
 
 x_check = check_with_numpy(A, B)
 print(f"Solved with numpy: x = {x_check}")
