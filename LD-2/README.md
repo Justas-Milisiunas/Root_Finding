@@ -1,6 +1,6 @@
-# 2 Laboratorinis darbas
+# 2 Laboratorinis darbas 12 vr.
 
-**1 užduotis 12 vr.**
+**1 užduotis**
 
 ![task 1](https://i.imgur.com/rfW5fJu.png)
 
@@ -19,3 +19,10 @@ x satisfy all equations in the system: True
 
 Solved with numpy: x = [[ 2.5,  4,  -3,  -1.5]]
 
+
+
+**2 užduotis**
+
+![task 2-1](https://i.imgur.com/JyDjNg2.png)
+
+![task 2-1-vr](https://i.imgur.com/XgPiaJg.png)
