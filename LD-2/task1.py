@@ -92,3 +92,5 @@ print(f"x satisfy all equations in the system: {x_correct}\n")
 
 x_check = check_with_numpy(A, B)
 print(f"Solved with numpy: x = {x_check}")
+
+# TODO: Change matrices
