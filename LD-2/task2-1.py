@@ -45,13 +45,9 @@ def show_f_roots():
 
 
 # Solves system using newton's method
-def newton():
-    x = np.array([3.5, -8.])
+def newton(x):
     ff = f(x)
     dff = df(x)
-    alpha = 1
-    max_iterations = 200
-    eps = 1e-10
     for i in range(max_iterations):
         dff = df(x)
         delta_x, a, b, c = np.linalg.lstsq(-dff, ff)
@@ -74,19 +70,34 @@ def newton():
 
 
 # System of nonlinear equations
+# def f(x):
+#     return np.asmatrix([
+#         [x[0] ** 2 + x[1] ** 2 - 2],
+#         [x[0] ** 2 - x[1] ** 2]
+#     ])
+
+
 def f(x):
     return np.asmatrix([
-        [x[0] ** 2 + x[1] ** 2 - 2],
-        [x[0] ** 2 - x[1] ** 2]
+        [x[0] ** 2 + 10 * (np.sin(x[0]) + np.cos(x[1])) ** 2 - 10],
+        [(x[1] - 3) ** 2 + x[0] - 8]
+    ])
+
+
+def df(x):
+    return np.asmatrix([
+        [2 * x[0] + 20 * (np.sin(x[0]) + np.cos(x[1])) * np.cos(x[0]),
+         20 * (np.sin(x[0]) + np.cos(x[1])) * (-np.sin(x[1]))],
+        [1, 2 * (x[1] - 3)]
     ])
 
 
 # System of nonlinear equations derivative
-def df(x):
-    return np.asmatrix([
-        [2 * x[0], 2 * x[1]],
-        [2 * x[0], -2 * x[1]]
-    ])
+# def df(x):
+#     return np.asmatrix([
+#         [2 * x[0], 2 * x[1]],
+#         [2 * x[0], -2 * x[1]]
+#     ])
 
 
 # Used for showing graphs
@@ -102,7 +113,11 @@ show_z2_graph()
 
 show_f_roots()
 
-newton()
+alpha = 1
+max_iterations = 200
+eps = 1e-10
+initial_x = np.array([1, 1])  # Initial guess
 
-# TODO: Change system of equations
-# TODO: Add solved x check
+# Solves system and checks with f function
+result = newton(initial_x)
+print(f(result))
