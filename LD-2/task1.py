@@ -61,25 +61,35 @@ def check_with_numpy(a, b):
 
 # Checks if all x satisfy all equations in the system by inserting them in each equation
 def check_x(a, b, x):
-    for i in range(0, len(a) - 1):
+    counter = 0
+    for i in range(0, len(a)):
         _sum = 0
         for j in range(0, len(a[i])):
             _sum += a[i, j] * x[j]
 
         if abs(b[i] - _sum) > eps:
+            counter += 1
+        else:
             return False
 
     return True
 
 
-A = np.array([[1, 1, 1, 1],
-              [1, -1, -1, 1],
-              [2, 1, -1, 2],
-              [3, 1, 2, -1]])
+# A = np.array([[1, 1, 1, 1],
+#               [1, -1, -1, 1],
+#               [2, 1, -1, 2],
+#               [3, 1, 2, -1]])
+#
+# B = np.array([2, 0, 9, 7])
 
-B = np.array([2, 0, 9, 7])
+A = np.array([[3, 1, -1, 1],
+              [1, -2, 3, 1],
+              [2, -9, 5, 2],
+              [1, -7, 2, 1]])
 
-eps = 1e-4
+B = np.array([27, 24, 27, 3])
+
+eps = 1e-10
 
 Q, R = qr_decomposition(A.copy())
 y = np.dot(Q.T, B)
@@ -92,5 +102,3 @@ print(f"x satisfy all equations in the system: {x_correct}\n")
 
 x_check = check_with_numpy(A, B)
 print(f"Solved with numpy: x = {x_check}")
-
-# TODO: Change matrices
