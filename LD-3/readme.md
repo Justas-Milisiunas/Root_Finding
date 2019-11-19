@@ -9,4 +9,8 @@
 
 **a) grafikas**
 
-![a grafikas](https://i.imgur.com/QchRmWS.png)    
+![a grafikas](https://i.imgur.com/QchRmWS.png) 
+   
+**b) grafikas**
+
+![b grafikas](https://i.imgur.com/TVFHfE3.png)

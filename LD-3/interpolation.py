@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def f(x):
@@ -9,6 +8,22 @@ def f(x):
     :return: y value
     """
     return (np.log(x) / (np.sin(2 * x) + 1.5)) - (x / 7)
+
+
+def chebyshev_range(count, start, end):
+    """
+    Calculates x range values using chebyshev polynomial formula
+    :param count: Points count
+    :param start: x range start
+    :param end: x range end
+    :return: Calculated x values array
+    """
+    range_x = []
+    for i in range(count):
+        temp = (end + start) / 2 + (end - start) / 2 * np.cos((2 * i + 1) * np.pi / (2 * count))
+        range_x.append(temp)
+
+    return range_x
 
 
 def newton_interpolation_coefficients(range_x, range_y):
@@ -52,27 +67,3 @@ def newton_interpolation_f(range_x, range_y):
         return ff
 
     return interpolation_f
-
-
-# Number of points
-n = 30
-
-# Interpolation function range
-range_start = 2
-range_end = 10
-step_size = (range_end - range_start) / n
-
-# X values and Y values calculation
-x_range = np.arange(range_start, range_end, step_size)
-y_range = [f(x) for x in x_range]
-
-# Made interpolation function
-interpol_f = newton_interpolation_f(x_range, y_range)
-
-# Shows f(x) and interpolation graphs
-plt.plot(np.arange(range_start, range_end, 0.01), [f(x) for x in np.arange(range_start, range_end, 0.01)], 'b',
-         label='f(x)')
-plt.plot(x_range, [interpol_f(x) for x in x_range], 'r', label=f'{n} points interpolation')
-
-plt.legend()
-plt.show()
