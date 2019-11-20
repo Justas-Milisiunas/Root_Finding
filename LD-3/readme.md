@@ -14,3 +14,11 @@
 **b) grafikas**
 
 ![b grafikas](https://i.imgur.com/TVFHfE3.png)
+
+**2 užduotis 12 vr.**
+
+![2 uzduotis](https://i.imgur.com/cGTUqlu.png)
+
+**a) grafikas**
+
+![2 uzduoties a dalies grafikas](https://i.imgur.com/mLHzjcr.png)
