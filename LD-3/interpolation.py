@@ -67,3 +67,29 @@ def newton_interpolation_f(range_x, range_y):
         return ff
 
     return interpolation_f
+
+
+def akima_points_derivative(range_x, range_y):
+    """
+    TODO: not working
+    Calculates each point slope
+    Source: https://en.wikipedia.org/wiki/Akima_spline
+    :param range_x: x range values array
+    :param range_y: y range values array
+    :return: each point calculated slope values array
+    """
+
+    def m(index):
+        """
+        Slope of the line segment calculation (from wiki source)
+        :param index: Point index
+        :return: Calculated slope of the line segment
+        """
+        return (range_y[index + 1] - range_y[index]) / (range_x[index + 1] - range_x[index])
+
+    range_s = []
+    for i in range(2, len(range_x) - 2):
+        range_s.append((np.abs(m(i + 1) - m(i)) * m(i - 1) + np.abs(m(i - 1) - m(i - 2)) * m(i)) / (
+                np.abs(m(i + 1) - m(i)) + np.abs(m(i - 1) - m(i - 2))))
+
+    return range_s
