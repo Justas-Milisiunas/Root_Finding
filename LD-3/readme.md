@@ -28,3 +28,13 @@
 **b) grafikas**
 
 ![2 uzduoties b dalies grafikas](https://i.imgur.com/dmyiH2t.png)
+
+**3 užduotis 12 vr.**
+
+![3 uzd](https://i.imgur.com/mgyLbGy.png)
+
+![3 uzd vr](https://i.imgur.com/cPZeyKH.png)
+
+**Kipro šalies kontūrai naudojant 100 interpoliavimotaškų**
+
+![Salis](https://i.imgur.com/sfufPqP.png)
