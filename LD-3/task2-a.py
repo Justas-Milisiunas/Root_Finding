@@ -20,6 +20,7 @@ plt.xticks(x_range)
 plt.xlabel('Month')
 plt.ylabel('Temp. avg.')
 
+plt.title("2004 Cyprus temperature")
 plt.grid(True)
 plt.legend()
 plt.show()
