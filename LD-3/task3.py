@@ -4,7 +4,7 @@ import numpy as np
 from interpolation import parametric_interpolation, hermite_interpolation_spline
 from task3_data import x_range, y_range
 
-n = 100  # Number of interpolation points
+n = 305  # Number of interpolation points
 step = 0.1  # Graph's precision
 
 # Reducing interpolation points to selected
