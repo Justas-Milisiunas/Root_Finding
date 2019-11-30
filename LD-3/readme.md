@@ -14,3 +14,27 @@
 **b) grafikas**
 
 ![b grafikas](https://i.imgur.com/TVFHfE3.png)
+
+**2 užduotis 12 vr.**
+
+![2 uzd](https://i.imgur.com/w8UuEJN.png)
+
+![2 uzduotis](https://i.imgur.com/cGTUqlu.png)
+
+**a) grafikas**
+
+![2 uzduoties a dalies grafikas](https://i.imgur.com/mLHzjcr.png)
+
+**b) grafikas**
+
+![2 uzduoties b dalies grafikas](https://i.imgur.com/dmyiH2t.png)
+
+**3 užduotis 12 vr.**
+
+![3 uzd](https://i.imgur.com/mgyLbGy.png)
+
+![3 uzd vr](https://i.imgur.com/cPZeyKH.png)
+
+**Kipro šalies kontūrai naudojant 100 interpoliavimotaškų**
+
+![Salis](https://i.imgur.com/sfufPqP.png)

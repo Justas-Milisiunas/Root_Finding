@@ -19,10 +19,14 @@ interpol_f = newton_interpolation_f(x_range_cheb, y_range_cheb)
 # Shows f(x) and interpolation graphs
 plt.plot(np.arange(range_start, range_end, 0.01), [f(x) for x in np.arange(range_start, range_end, 0.01)], 'b',
          label='f(x)')
-plt.plot(x_range_cheb, [interpol_f(x) for x in x_range_cheb], 'r', label=f'{n} points interpolation')
+plt.plot(np.arange(range_start, range_end, 0.01), [interpol_f(x) for x in np.arange(range_start, range_end, 0.01)], 'r',
+         label=f'{n} points interpolation function')
+plt.scatter(x_range_cheb, y_range_cheb, color='g', label='Interpolation points')
 
+plt.title('f(x) interpolation using Chebyshev x')
 plt.xlabel('x')
 plt.ylabel('f(x)')
 
+plt.grid(True)
 plt.legend()
 plt.show()
