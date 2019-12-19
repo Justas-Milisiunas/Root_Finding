@@ -3,7 +3,7 @@ import numpy as np
 
 # Used source: https://www.youtube.com/watch?v=OukRTF6Bgcc
 
-step = 0.1
+# step = 0.1
 
 # Given constants
 m = 10
@@ -12,12 +12,6 @@ h0 = 30
 k1 = 0.05
 k2 = 0.01
 g = 9.8
-
-# Used for calculations
-v_last = v0
-a_last = 0
-h_last = h0
-t_last = 0
 
 
 def h(t):
@@ -60,19 +54,27 @@ def a():
     return ((v_last ** 2) * k - m * g) / m
 
 
-x_range = np.arange(0, 40, step)
-y_range = [h(_x) for _x in x_range]
+steps = [1, 0.5, 0.1, 0.01, 0.001]
+for step in steps:
+    # Used for calculations
+    v_last = v0
+    a_last = 0
+    h_last = h0
+    t_last = 0
 
-y = [_y for _y in y_range if _y >= 0]
-x = x_range[:len(y)]
+    x_range = np.arange(0, 40, step)
+    y_range = [h(_x) for _x in x_range]
 
-print("Max height reached: %.2f m at %.2f s" % (max(y), x[y.index(max(y))]))
-print("Ground reached at %.2f" % x[-1])
+    y = [_y for _y in y_range if _y >= 0]
+    x = x_range[:len(y)]
+
+    print("[STEP=%.3f] Max height reached: %.2fm at %.2fs | Ground reached at %.2fs" % (step, max(y), x[y.index(max(y))], x[-1]))
+
+    plt.plot(x, y, label=f'h(t) step = {step}')
 
 plt.title("Projectile height given time")
 plt.xlabel("t (s)")
 plt.ylabel("h (m)")
 
-plt.plot(x, y, label='h(t)')
 plt.legend()
 plt.show()
